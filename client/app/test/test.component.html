@@ -1,0 +1,40 @@
+<style>
+table thead{background: #f8f8f8}
+table tr , table th, table td{border:1px solid #e7e7e7; text-align:center; padding:2px 10px; font-size:14px;}  
+</style>
+
+<p>
+  test works!
+</p>
+
+<div class="input-box">
+ 이름 :  <input type="text" [(ngModel)]="name">
+  <button (click)="alertName()">click</button>
+</div>
+
+<br/>
+
+Num1 : <input type="text" [(ngModel)]="num1">
+op : <input type="text"  [(ngModel)]="op">
+Num2 : <input type="text" [(ngModel)]="num2">
+= <input type="text" [(ngModel)]="result">
+<button [style.color]="isRed? 'red' : 'blue' " (click)="plus()">plus</button>
+
+<!--
+<table style=" margin-top:10px;">
+    <thead>
+      <tr>
+        <th>순서</th>
+        <th>제목</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1</td>
+        <td>나는 테이블이다</td>
+      </tr>
+    </tbody>
+  </table>
+-->
+
+
