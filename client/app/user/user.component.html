@@ -1,4 +1,9 @@
-<p>
+<style>
+  table thead{background: #f8f8f8}
+  table tr , table th, table td{border:1px solid #e7e7e7; text-align:center; padding:2px 10px; font-size:14px;}  
+  </style>
+
+<!-- <p>
 user list
 <br/>
 user name : {{userName}}
@@ -18,4 +23,44 @@ user name : {{userName}}
   <li *ngFor="let un of userNameList">
     {{un.name}}, {{un.age}}
   </li>
-</ul>
+</ul> -->
+
+<!-- <app-user-list [userList]="userList"  (outputTest)="outputTest($event)" >
+ 
+</app-user-list> -->
+
+<app-user-insert   (outputUser)="outputUser($event)" >
+  
+ </app-user-insert>
+
+<button (click)="getUsers()">getUser</button>
+<button (click)="addUser()">addUser</button>
+<div class="container">
+
+  <h2>User List</h2>
+
+
+
+<table class="table table-hover" style=" margin-top:10px;">
+    <thead>
+      <tr>
+        <th>userNo</th>
+        <th>userName</th>
+        <th>userId</th>
+        <th>userPwd</th>
+        <th>완료여부</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let un of userList">
+        <td><input type="text" value="{{un.userNo}}"></td>
+        <td><input type="text" [(ngModel)]="un.userName"></td>
+        <td><input type="text" [(ngModel)]="un.userId"></td>
+        <td><input type="text" [(ngModel)]="un.userPwd"></td>
+        <td><input type="checkbox" [checked]="un.complete"></td>
+      </tr>
+    </tbody>
+  </table>
+
+</div>
+
